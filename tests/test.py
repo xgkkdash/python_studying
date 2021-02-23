@@ -1,5 +1,5 @@
 import pytest
-from main import for_else_check_odd_num
+from main import for_else_check_odd_num, incorrect_default_list_value, correct_default_list_value
 
 
 def test_for_else():
@@ -33,3 +33,10 @@ def test_str_methods():
     assert "a,b".split(',') == ['a', 'b']
     assert "idea".startswith("id")
     assert "    inside    ".strip() == "inside"
+
+
+def test_default_list_value():
+    assert incorrect_default_list_value(1) == [1]
+    assert incorrect_default_list_value(2) == [1, 2]
+    assert correct_default_list_value(1) == [1]
+    assert correct_default_list_value(2) == [2]
