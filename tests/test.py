@@ -7,3 +7,9 @@ def test_for_else():
     assert result
     result = for_else_check_odd_num(4)
     assert not result
+
+
+def test_dict_get():
+    my_dict = {'a': 1, 'b': 2}
+    assert my_dict.get('a')
+    assert not my_dict.get('c')  # will default return None if key is not found in dict
