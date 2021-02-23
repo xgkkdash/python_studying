@@ -40,3 +40,10 @@ def test_default_list_value():
     assert incorrect_default_list_value(2) == [1, 2]
     assert correct_default_list_value(1) == [1]
     assert correct_default_list_value(2) == [2]
+
+
+def test_lambda_expression():
+    # sort list by first character using lambda_expression
+    fruits = ['watermelon', 'orange', 'banana', 'apple']
+    fruits.sort(key=lambda x: x[0])
+    assert fruits == ['apple', 'banana', 'orange', 'watermelon']
