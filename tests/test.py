@@ -47,3 +47,20 @@ def test_lambda_expression():
     fruits = ['watermelon', 'orange', 'banana', 'apple']
     fruits.sort(key=lambda x: x[0])
     assert fruits == ['apple', 'banana', 'orange', 'watermelon']
+
+
+def test_list_methods():
+    init_list = [i for i in range(3)]
+    assert init_list.index(1) == 1
+    init_list.insert(1, 3)
+    assert init_list == [0, 3, 1, 2]
+    assert init_list.pop() == 2
+    assert init_list == [0, 3, 1]
+    init_list.sort(reverse=True)
+    assert init_list == [3, 1, 0]
+    init_list.reverse()
+    assert init_list == [0, 1, 3]
+    copy_list = init_list.copy()
+    init_list.clear()
+    assert init_list == []
+    assert copy_list == [0, 1, 3]
