@@ -64,3 +64,25 @@ def test_list_methods():
     init_list.clear()
     assert init_list == []
     assert copy_list == [0, 1, 3]
+
+
+def test_looping_techniques():
+    # test enumerate
+    my_dict = {str(k): k*k for k in range(3)}
+    for i, kv_tuple in enumerate(my_dict.items()):
+        key, value = kv_tuple
+        assert key == str(i)
+        assert value == i ** 2
+
+    # test zip
+    keys = ["a", "b", "c"]
+    values = [1, 2, 3, 4]
+    new_dict = {k: v for k, v in zip(keys, values)}
+    assert len(new_dict) == len(keys) < len(values)
+    assert new_dict == {"a": 1, "b": 2, "c": 3}
+
+    # test sorted set
+    origin_list = [1, 5, 3, 3, 5]
+    new_list = sorted(set(origin_list), reverse=True)
+    assert new_list == [5, 3, 1]
+    assert new_list != origin_list
